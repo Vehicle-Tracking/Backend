@@ -36,16 +36,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="buildspec.yml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Dockerfile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
-  <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="cd ngClient &amp;&amp; npm install &amp;&amp; npm build run" />
-  </Target>-->
 
 </Project>

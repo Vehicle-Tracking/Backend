@@ -2,7 +2,8 @@
 
 echo "*** Root version ***"  
 echo "*** adding zip ... ***"  
-apk add zip unzip
+sudo apt-get update
+sudo apt-get install zip gzip tar
 
 echo "*** changing directoriy for command ... ***"  
 cd Avt.Web.Backend

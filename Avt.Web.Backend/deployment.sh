@@ -2,7 +2,8 @@
 
 echo "*** Web dir version ***"  
 echo "*** adding zip ... ***"  
-apk add zip unzip
+sudo apt-get update
+sudo apt-get install zip gzip tar
 
 echo "*** restoring packages ... ***"  
 dotnet restore

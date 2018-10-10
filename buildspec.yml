@@ -1,23 +1,9 @@
 version: 0.2
 
 phases:
-#  install:
- #   commands:
-  #     - sudo apt-get install zip unzip
-  pre_build:
-    commands:
-       - cd Avt.Web.Backend
-       - dotnet restore
   build:
     commands:
-       - dotnet build -c Release
-  post_build:
-    commands:
-       - dotnet publish --no-restore -c Release
-      # - command
-    finally:
-       - tail=< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${5:-16};
-       - zip -r "$backend_$tail.zip" bin/Release/netcoreapp2.1/publish/
+       - ./Avt.Web.Backend/deployment.sh
 artifacts:
   files: 
     - bin/Release/netcoreapp2.1/publish/"$backend_$tail.zip"

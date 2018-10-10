@@ -1,0 +1,83 @@
+{
+  "containerDefinitions": [
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/avt-backend",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 18805
+        },
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 44359
+        }
+      ],
+      "mountPoints": [
+        {
+          "containerPath": "/usr/app/shared",
+          "sourceVolume": "appvolume"
+        }
+      ],
+      "workingDirectory": "/usr/app",
+      "image": "microsoft/dotnet:2.1-runtime-deps-alpine3.7",
+      "memory": 128,
+      "name": "webapp"
+    },
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/avt-backend",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "command": [
+        "\"nginx\"",
+        "\"-g\"",
+        "\"daemon off;\""
+      ],
+      "workingDirectory": "/etc/nginx/",
+      "memory": 128,
+      "volumesFrom": [
+        {
+          "sourceContainer": "webapp"
+        }
+      ],
+      "image": "nginx",
+      "links": [
+        "webapp:appvolume"
+      ],
+      "name": "nginx"
+    }
+  ],
+  "family": "avt-backend",
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "networkMode": "bridge",
+  "volumes": [
+    {
+      "name": "appvolume",
+      "host": {
+        "sourcePath": "/usr/app/shared"
+      }
+    }
+  ]
+}

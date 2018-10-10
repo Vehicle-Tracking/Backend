@@ -8,10 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="ngClient\**" />
-    <Content Remove="ngClient\**" />
-    <EmbeddedResource Remove="ngClient\**" />
-    <None Remove="ngClient\**" />
+    <Content Remove="Dockerrun.aws.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +26,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Dockerrun.aws.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Avt.Web.Backend.Data\Avt.Web.Backend.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">

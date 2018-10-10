@@ -1,0 +1,19 @@
+{
+  "AWSEBDockerrunVersion": 1,
+  "Image": {
+    "Name": "microsoft/dotnet:2.1-runtime-deps-alpine3.7",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "18085"
+    }
+  ],
+  "Volumes": [
+    {
+      "HostDirectory": "/var/app/host",
+      "ContainerDirectory": "/etc/container"
+    }
+  ],
+  "Logging": "/var/log/nginx"
+}

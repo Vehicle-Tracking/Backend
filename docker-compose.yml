@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  app:
+    build:
+      context:  .
+      dockerfile: Avt.Web.Backend/Dockerfile
+    expose:
+      - "18008"
+
+  proxy:
+    build:
+      context:  .
+      dockerfile: nginx/nginx.Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - app

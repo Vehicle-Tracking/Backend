@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  app:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "18805:80"
+      - "44359:443"
+    volumes:
+      - app:/app
+networks:
+  default:
+    external:
+      name: nat
+volumes:
+  app:

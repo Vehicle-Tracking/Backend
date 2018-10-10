@@ -24,7 +24,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
-
+ 
   <ItemGroup>
     <None Include="Dockerrun.aws.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

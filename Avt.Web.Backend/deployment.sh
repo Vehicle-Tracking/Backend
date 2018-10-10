@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-echo "*** Root version ***"  
+echo "*** Web dir version ***"  
 echo "*** adding zip ... ***"  
 apk add zip unzip
 
-echo "*** changing directoriy for command ... ***"  
-cd Avt.Web.Backend
 echo "*** restoring packages ... ***"  
 dotnet restore
 echo "*** building ... ***"  

@@ -6,13 +6,14 @@ phases:
   #     - sudo apt-get install zip unzip
   pre_build:
     commands:
-       - dotnet restore Avt.Web.Backend/Avt.Web.Backend.csproj
+       - cd Avt.Web.Backend
+       - dotnet restore
   build:
     commands:
-       - dotnet build Avt.Web.Backend/Avt.Web.Backend.csproj -c Release
+       - dotnet build -c Release
   post_build:
     commands:
-       - dotnet publish  Avt.Web.Backend/Avt.Web.Backend.csproj --no-restore -c Release
+       - dotnet publish --no-restore -c Release
       # - command
     finally:
        - tail=< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${5:-16};

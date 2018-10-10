@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 echo "*** adding zip ... ***"  
 apk add zip unzip

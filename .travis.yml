@@ -1,0 +1,4 @@
+language: csharp
+solution: Avt.Web.Backend.sln
+script:    # the following commands are just examples, use whatever your build process requires
+  - ./deployment.sh

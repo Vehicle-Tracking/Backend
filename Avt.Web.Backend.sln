@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avt.Web.Backend.Data", "Avt
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{7220C7D6-98D7-4D2E-B712-9A7F02CA1EBE}"
 	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
 		buildspec.yml = buildspec.yml
 		deployment.sh = deployment.sh
 		Dockerfile = Dockerfile

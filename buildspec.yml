@@ -3,7 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
-       - ./deployment.sh
+       - sh ./deployment.sh
 artifacts:
   files: 
     - bin/Release/netcoreapp2.1/publish/"$backend_$tail.zip"

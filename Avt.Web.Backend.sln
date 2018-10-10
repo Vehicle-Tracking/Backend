@@ -9,7 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 	ProjectSection(SolutionItems) = preProject
 		Avt.Web.Backend\appsettings.Development.json = Avt.Web.Backend\appsettings.Development.json
 		Avt.Web.Backend\appsettings.json = Avt.Web.Backend\appsettings.json
-		buildspec.yml = buildspec.yml
 		deployment.sh = deployment.sh
 		Dockerfile = Dockerfile
 		Dockerrun.aws.json = Dockerrun.aws.json

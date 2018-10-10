@@ -14,13 +14,13 @@ phases:
     commands:
        - dotnet publish  Avt.Web.Backend/Avt.Web.Backend.csproj --no-restore -c Release
       # - command
-#    finally:
- #      - tail=< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${5:-16};
- #      - zip -r "$backend_$tail.zip" /out
+    finally:
+       - tail=< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${5:-16};
+       - zip -r "$backend_$tail.zip" bin/Release/netcoreapp2.1/publish/
 artifacts:
   files: 
-    - '**/*'
-  name: backend_build-$(date +"%Y-%m-%d %H:%M:%S")  
+    - bin/Release/netcoreapp2.1/publish/"$backend_$tail.zip"
+  name: backend_build_pack 
 
 
 #version: 0.2

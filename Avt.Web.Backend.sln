@@ -8,8 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{7220C7D6-98D7-4D2E-B712-9A7F02CA1EBE}"
 	ProjectSection(SolutionItems) = preProject
 		.travis.yml = .travis.yml
-		buildspec.yml = buildspec.yml
-		deployment.sh = deployment.sh
 		Dockerfile = Dockerfile
 		Dockerrun.aws.json = Dockerrun.aws.json
 		task_definition.json = task_definition.json

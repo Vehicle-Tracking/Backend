@@ -3,16 +3,16 @@ version: 0.2
 phases:
   build:
     commands: 
-       - sudo apt-get update
-       - sudo apt-get install zip gzip tar
+      # - sudo apt-get update
+     #  - sudo apt-get install zip gzip tar
        - dotnet restore
        - dotnet build -c Release
        - dotnet publish --no-restore -c Release
-       - tail=< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${5:-16};
-       - zip -r "$backend_$tail.zip" bin/Release/netcoreapp2.1/publish/
+     #  - tail=< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${5:-16};
+     #  - zip -r "$backend_$tail.zip" bin/Release/netcoreapp2.1/publish/
 artifacts:
   files: 
-    - bin/Release/netcoreapp2.1/publish/"$backend_$tail.zip"
+    - bin/Release/netcoreapp2.1/publish/*
   name: backend_build_pack 
 
 
